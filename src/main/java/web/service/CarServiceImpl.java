@@ -1,11 +1,14 @@
 package web.service;
 
+import org.springframework.core.annotation.AliasFor;
 import org.springframework.stereotype.Component;
 import web.model.Car;
 
 import java.util.ArrayList;
 import java.util.List;
+
 @Component
+
 public class CarServiceImpl implements CarService {
     private List<Car> cars;
 
@@ -19,9 +22,9 @@ public class CarServiceImpl implements CarService {
         cars.add(new Car("Toyota", "Mark II", 7));
     }
 
+    @Override
     public List<Car> numberOfCars(int size) {
         List<Car> result = new ArrayList<>();
-
         for (int i = 0; (i < size) & (i < 5); i++) {
             result.add(cars.get(i));
         }
